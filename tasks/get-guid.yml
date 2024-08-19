@@ -1,0 +1,30 @@
+# The inputs, outputs, params, filename, and filepath
+# of this task file are part of its semantically versioned API.
+# See our documentation for a detailed discussion of our semver API.
+# See www.semver.org for an explanation of semantic versioning.
+
+# code_snippet get-guid start yaml array
+---
+platform: linux
+
+inputs:
+- name: additional-platform-automation-tasks
+- name: platform-automation-tasks
+- name: env # contains the env file with target OpsMan Information
+
+outputs:
+- name: guid # contains guid for then productn slug
+
+params:
+  PRODUCT_SLUG:
+  # - Required
+  # - The product slug to retrieve the GUID for
+
+  ENV_FILE: env.yml
+  # - Required
+  # - Filepath of the env config YAML
+  # - The path is relative to root of the `env` input
+
+run:
+  path: additional-platform-automation-tasks/tasks/get-guid.sh
+# code_snippet get-guid end

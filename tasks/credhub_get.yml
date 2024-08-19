@@ -1,0 +1,67 @@
+# The inputs, outputs, params, filename, and filepath
+# of this task file are part of its semantically versioned API.
+# See our documentation for a detailed discussion of our semver API.
+# See www.semver.org for an explanation of semantic versioning.
+
+# code_snippet credhub-get start yaml
+---
+platform: linux
+
+inputs:
+- name: additional-platform-automation-tasks
+- name: platform-automation-tasks
+- name: files
+# contains YAML files with extension `.yml`.
+# Each one of these files will have their values interpolated from credhub.
+# For examples, run: `credhub interpolate --help`
+# (minimum version >= 2.1.0 required)
+
+outputs:
+- name: interpolated-file
+# Contains only yaml files found and interpolated by this task.
+# Interpolates single file with passed template and filename
+
+# all params are required to be filled out
+params:
+
+  CREDHUB_CLIENT:
+  CREDHUB_SECRET:
+  CREDHUB_SERVER:
+  # - Required
+  # - Credentials to talk to credhub server
+
+  CREDHUB_CA_CERT:
+  # - Optional
+  # - This is only necessary if your Concourse worker
+  #   is not already configured to trust the CA used for Credhub.
+  # - If more than one CA cert is required (ie the UAA),
+  #   the CA certs can be concatenated together and separated by a newline.
+  #   For example,
+  #   CREDHUB_CA_CERT: |
+  #     -----BEGIN CERTIFICATE-----
+  #     ...credhub cert...
+  #     -----END CERTIFICATE-----
+  #     -----BEGIN CERTIFICATE-----
+  #     ...UAA cert...
+  #     -----END CERTIFICATE-----
+
+  FILENAME:
+  # - Required
+  # - Filename of the interpolated file
+
+  TEMPLATE:
+  # - Required
+  # - Template of values to get
+  # For example,
+  #   TEMPLATE: |
+  #     credentials:
+  #     - name: /concourse/{myfoundation}/isolation_networking_poe_ssl_certs
+  #       type: json
+  #       value: ((/opsmgr/{p-isolation-segment-GUID}/networking_poe_ssl_certs/0/certificate))
+  #     - name: /concourse/{myfoundation}/networking_poe_ssl_certs
+  #       type: json
+  #       value: ((/opsmgr/{cf-GUID}/networking_poe_ssl_certs/0/certificate))
+
+run:
+  path: additional-platform-automation-tasks/tasks/credhub-get.sh
+# code_snippet credhub-get end
