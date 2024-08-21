@@ -24,6 +24,6 @@ mkdir -p interpolated-files/credhub-get
 
 credhub interpolate \
   --file templates/"${FILENAME}" ${flags[@]} \
-  >interpolated-files/"${FILENAME}"
+  > interpolated-files/credhub-get/"${FILENAME}"
 
 # code_snippet credhub-get-script end
