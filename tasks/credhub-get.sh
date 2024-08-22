@@ -8,7 +8,7 @@ if [ -z "${OPSMAN_SSH_PRIVATE_KEY}" ];
 then
   env | grep CREDHUB > credhub-env-vars.sh
   cat "${OPSMAN_SSH_PRIVATE_KEY}" > OPSMAN_SSH_PRIVATE_KEY.key
-  eval $(om bosh-env -i "OPSMAN_SSH_PRIVATE_KEY.key")
+  eval $(om --env env/"${ENV_FILE}" bosh-env -i "OPSMAN_SSH_PRIVATE_KEY.key")
 fi
 
 # NOTE: The credhub cli does not ignore empty/null environment variables.
