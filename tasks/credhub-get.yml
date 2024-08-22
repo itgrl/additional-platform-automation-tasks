@@ -27,8 +27,18 @@ params:
   CREDHUB_CLIENT:
   CREDHUB_SECRET:
   CREDHUB_SERVER:
-  # - Required
+  # - Optional 
+  # - if OPSMAN_SSH_PRIVATE_KEY is set
   # - Credentials to talk to credhub server
+  
+  OPSMAN_SSH_PRIVATE_KEY:
+  # - Optional
+  # - Allows you to set bosh-env with opsman
+  
+  ENV_FILE: env.yml
+  # - Required
+  # - Filepath of the env config YAML
+  # - The path is relative to root of the `env` input
 
   CREDHUB_CA_CERT:
   # - Optional
