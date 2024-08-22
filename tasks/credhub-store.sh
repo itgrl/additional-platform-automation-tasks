@@ -16,7 +16,7 @@ credhub --version
 
 flags=("")
 mkdir templates
-cat "${TEMPLATE}" > "templates/${FILENAME}"
+echo -e "${TEMPLATE}" > "templates/${FILENAME}"
 mkdir -p interpolated-files/credhub-get
 
 # ${flags[@] needs to be globbed to pass through properly

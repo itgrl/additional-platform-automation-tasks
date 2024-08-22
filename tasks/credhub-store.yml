@@ -55,7 +55,7 @@ params:
   # For example,
   #   TEMPLATE: |
   #     credentials:
-  #     - name: /concourse/{myfoundation}/isolation_networking_poe_ssl_certs
+  #     - name: /concourse/((foundation))/isolation_networking_poe_ssl_certs
   #       type: json
   #       value: 
   #         cert_and_private_key_pems: |-
@@ -77,7 +77,7 @@ params:
   #           -----BEGIN PUBLIC KEY-----
   #           ....................
   #           -----END PUBLIC KEY-----  
-  #     - name: /concourse/{myfoundation}/networking_poe_ssl_certs
+  #     - name: /concourse/((foundation))/networking_poe_ssl_certs
   #       type: json
   #       value: 
   #         cert_and_private_key_pems: |-

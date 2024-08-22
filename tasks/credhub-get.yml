@@ -55,10 +55,10 @@ params:
   # For example,
   #   TEMPLATE: |
   #     credentials:
-  #     - name: /concourse/{myfoundation}/isolation_networking_poe_ssl_certs
+  #     - name: /concourse/((foundation))/isolation_networking_poe_ssl_certs
   #       type: json
   #       value: ((/opsmgr/{p-isolation-segment-GUID}/networking_poe_ssl_certs/0/certificate))
-  #     - name: /concourse/{myfoundation}/networking_poe_ssl_certs
+  #     - name: /concourse/((foundation))/networking_poe_ssl_certs
   #       type: json
   #       value: ((/opsmgr/{cf-GUID}/networking_poe_ssl_certs/0/certificate))
 
