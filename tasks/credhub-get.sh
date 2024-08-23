@@ -25,7 +25,11 @@ credhub --version
 flags=("")
 mkdir templates
 echo -e "${TEMPLATE}" > "templates/${FILENAME}"
-mkdir -p interpolated-files/credhub-get
+if [ -d interpolated-files ]; then 
+  mkdir interpolated-files/credhub-get; 
+else 
+  mkdir -p interpolated-files/credhub-get ; 
+fi
 
 # ${flags[@] needs to be globbed to pass through properly
 # shellcheck disable=SC2068
