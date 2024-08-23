@@ -13,7 +13,7 @@ inputs:
 - name: env # contains the env file with target OpsMan Information
 
 outputs:
-- name: guid # contains guid for the product slug
+- name: deployment-guids # contains guid for the product slug
   # file created in directory deployment-guids with the filename of the product slug
   # For example:
   #   - Product Slug cf: deployment-guids/cf
