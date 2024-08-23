@@ -7,7 +7,7 @@ set -euo pipefail
 if [ -n "${OPSMAN_SSH_PRIVATE_KEY}" ];
 then
   env | grep CREDHUB > credhub-env-vars.sh
-  cat "${OPSMAN_SSH_PRIVATE_KEY}" > OPSMAN_SSH_PRIVATE_KEY.key
+  echo "${OPSMAN_SSH_PRIVATE_KEY}" > OPSMAN_SSH_PRIVATE_KEY.key
   eval $(om --env env/"${ENV_FILE}" bosh-env -i "OPSMAN_SSH_PRIVATE_KEY.key")
 fi
 
