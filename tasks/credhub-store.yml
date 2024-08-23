@@ -10,7 +10,6 @@ platform: linux
 inputs:
 - name: additional-platform-automation-tasks
 - name: platform-automation-tasks
-- name: files
 # contains YAML files with extension `.yml`.
 # Each one of these files will have their values interpolated from credhub.
 # For examples, run: `credhub interpolate --help`

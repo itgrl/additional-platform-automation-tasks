@@ -10,7 +10,6 @@ platform: linux
 inputs:
 - name: additional-platform-automation-tasks
 - name: platform-automation-tasks
-- name: files
 # contains YAML files with extension `.yml`.
 # Each one of these files will have their values interpolated from credhub.
 # For examples, run: `credhub interpolate --help`
@@ -34,7 +33,7 @@ params:
   OPSMAN_SSH_PRIVATE_KEY:
   # - Optional
   # - Allows you to set bosh-env with opsman
-  
+
   ENV_FILE: env.yml
   # - Required
   # - Filepath of the env config YAML
