@@ -95,6 +95,14 @@ params:
   #           -----BEGIN PUBLIC KEY-----
   #           ....................
   #           -----END PUBLIC KEY-----
+ 
+  VAR1:
+  # - Optional
+  # Optional extra parameter
+
+  VAR2:
+  # - Optional
+  # Optional extra parameter
 
 run:
   path: additional-platform-automation-tasks/tasks/credhub-store.sh
