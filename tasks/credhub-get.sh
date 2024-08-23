@@ -33,7 +33,7 @@ credhub interpolate \
   --file templates/"${FILENAME}" ${flags[@]} \
   > interpolated-files/credhub-get/"${FILENAME}"
 
-if [ -z "${OPSMAN_SSH_PRIVATE_KEY}" ];
+if [ -n "${OPSMAN_SSH_PRIVATE_KEY}" ];
 then
   unset BOSH_ENVIRONMENT
   unset BOSH_CA_CERT
