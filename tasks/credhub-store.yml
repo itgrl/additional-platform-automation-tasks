@@ -13,7 +13,7 @@ inputs:
 - name: env
 
 outputs:
-- name: interpolated-file
+- name: interpolated-files
 # Contains only yaml files found and interpolated by this task.
 # Interpolates single file with passed template and filename
 
