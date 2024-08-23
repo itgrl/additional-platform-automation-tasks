@@ -4,7 +4,7 @@
 cat /var/version && echo ""
 set -euo pipefail
 
-if [ -z "${OPSMAN_SSH_PRIVATE_KEY}" ];
+if [ -n "${OPSMAN_SSH_PRIVATE_KEY}" ];
 then
   env | grep CREDHUB > credhub-env-vars.sh
   cat "${OPSMAN_SSH_PRIVATE_KEY}" > OPSMAN_SSH_PRIVATE_KEY.key
