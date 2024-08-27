@@ -11,6 +11,8 @@ inputs:
 - name: additional-platform-automation-tasks
 - name: platform-automation-tasks
 - name: env # contains the env file with target OpsMan Information
+- name: deployment-guids
+  optional: true
 
 outputs:
 - name: deployment-guids # contains guid for the product slug
