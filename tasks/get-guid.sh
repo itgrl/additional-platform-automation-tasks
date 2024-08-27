@@ -9,6 +9,6 @@ if [ ! -d deployment-guids ]; then
 fi
 
 om --env env/"${ENV_FILE}" curl -p /api/v0/deployed/products/ | \
-jq -c ".[] | select(.type == \"${PRODUCT_SLUG}\")" | jq '.guid' > deployment-guids/"${PRODUCT_SLUG}"
+jq -c ".[] | select(.type == \"${PRODUCT_SLUG}\")" | jq '.guid' | cut -d '"' -f2 > deployment-guids/"${PRODUCT_SLUG}"
 
 # code_snippet get-guid-script end
